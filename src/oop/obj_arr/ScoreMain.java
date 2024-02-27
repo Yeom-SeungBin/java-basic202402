@@ -2,7 +2,6 @@ package oop.obj_arr;
 
 import java.awt.*;
 import java.util.Scanner;
-import java.util.logging.SocketHandler;
 
 public class ScoreMain {
 
