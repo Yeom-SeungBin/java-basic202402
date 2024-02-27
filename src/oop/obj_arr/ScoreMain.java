@@ -1,6 +1,5 @@
 package oop.obj_arr;
 
-import java.awt.*;
 import java.util.Scanner;
 
 public class ScoreMain {
