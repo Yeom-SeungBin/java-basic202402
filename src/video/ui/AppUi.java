@@ -26,7 +26,7 @@ public class AppUi {
     }
 
     public static void makeLine() {
-        System.out.println("======================================");
+        System.out.println("=================================");
     }
 
     // 시작 화면 출력

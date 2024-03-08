@@ -52,7 +52,7 @@ public class UserService implements AppService {
         List<User> users = searchUser();
 
         if(users.size() > 0) {
-            System.out.println("\n======================= 회원 조회 결과 =======================");
+            System.out.println("\n============================ 회원 조회 결과 ============================");
             for (User user : users) {
                 System.out.println(user);
             }

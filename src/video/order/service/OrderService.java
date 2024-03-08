@@ -69,12 +69,12 @@ public class OrderService implements AppService {
         List<Integer> movieNums = new ArrayList<>();
 
         if (count > 0) {
-            System.out.printf("\n============================ 검색 결과 (총 %d건) ============================\n", count);
+            System.out.printf("\n================================================ 검색 결과(총 %d건) ================================================\n", count);
             for (Movie movie : movieList) {
                 System.out.println(movie);
                 movieNums.add(movie.getSerialNumber());
             }
-            System.out.println("===========================================================================================");
+            System.out.println("========================================================================================================================");
             System.out.println("### 대여할 DVD의 번호를 입력하세요.");
             int movieNumber = inputInteger(">>> ");
 
@@ -99,13 +99,13 @@ public class OrderService implements AppService {
         if (users.size() > 0) {
             List<Integer> userNums = new ArrayList<>();
 
-            System.out.println("\n======================= 회원 조회 결과 =======================");
+            System.out.println("\n==================================================== 회원 조회 결과 ====================================================");
             for (User user : users) {
                 System.out.println(user);
                 userNums.add(user.getUserNumber());
             }
 
-            System.out.println("===========================================================================================");
+            System.out.println("========================================================================================================================");
             System.out.println("### 대여할 회원의 회원번호를 입력하세요.");
             int userNumber = inputInteger(">>> ");
 
@@ -144,7 +144,7 @@ public class OrderService implements AppService {
         int count = movieList.size();
 
         if (count > 0) {
-            System.out.printf("\n============================ 검색 결과 (총 %d건) ============================\n", count);
+            System.out.printf("\n================================================== 검색 결과 (총 %d건) ==================================================\n", count);
             for (Movie movie : movieList) {
                 User rentalUser = movie.getReltalUser();
                 String phoneNumber = rentalUser.getPhoneNumber();
@@ -153,7 +153,7 @@ public class OrderService implements AppService {
                 , movie.getMovieName(), rentalUser.getUserName(), lastPhoneNumber,
                         rentalUser.getOrderList().get(movie.getSerialNumber()).getReturnDate());
             }
-            System.out.println("===========================================================================================");
+            System.out.println("========================================================================================================================");
         } else {
             System.out.println("\n### 대여 불가능한 DVD가 없습니다.");
         }
@@ -161,7 +161,7 @@ public class OrderService implements AppService {
 
     // DVD 반납 서비스 비즈니스 로직
     private void processReturnDvd() {
-        System.out.println("\n===================================== 반납 관리 시스템을 실행합니다. =====================================");
+        System.out.println("\n================================================== 반납 관리 시스템을 실행합니다. ==================================================");
         System.out.println("### 반납자의 이름을 입력하세요.");
         String name = inputString(">>> ");
 
@@ -170,12 +170,12 @@ public class OrderService implements AppService {
 
         if (count > 0) {
             List<Integer> userNums = new ArrayList<>();
-            System.out.printf("\n====================================== 조회 결과(총 %d건) ======================================\n", count);
+            System.out.printf("\n===================================================== 조회 결과(총 %d건) =====================================================\n", count);
             for (User user : users) {
                 System.out.println(user);
                 userNums.add(user.getUserNumber());
             }
-            System.out.println("===========================================================================================");
+            System.out.println("========================================================================================================================");
 
             System.out.println("### 반납자의 회원 번호를 입력하세요.");
             int userNumber = inputInteger(">>> ");
@@ -204,12 +204,12 @@ public class OrderService implements AppService {
         User returnUser = userRepository.findUserByNumber(userNumber);
 
         System.out.printf("\n### 현재 [%s] 회원님의 대여 목록입니다.\n", returnUser.getUserName());
-        System.out.println("===============================================================================================");
+        System.out.println("========================================================================================================================");
         Map<Integer, Order> orderList = returnUser.getOrderList();
         for (int key : orderList.keySet()) {
             System.out.println(orderList.get(key));
         }
-        System.out.println("===============================================================================================");
+        System.out.println("========================================================================================================================");
 
         System.out.println("### 반납할 DVD의 번호를 입력하세요.");
         int returnMovieNumber = inputInteger(">>> ");

@@ -60,7 +60,7 @@ public class MovieService implements AppService {
             List<Movie> movies = searchMovieData();
             int count = movies.size();
             if(count > 0) {
-                System.out.printf("\n====================== 검색 결과(총 %d건) ======================\n", count);
+                System.out.printf("\n================================================== 검색 결과 (총 %d건) ==================================================\n", count);
                 for (Movie movie : movies) {
                     System.out.println(movie);
                 }
